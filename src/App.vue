@@ -1,10 +1,7 @@
 <template>
-  <div id="app">
     <Header/>
     <Main/>
     <Footer/>
-    <hr>
-  </div>
 </template>
 
 <script>
@@ -23,7 +20,4 @@ export default {
 </script>
 
 <style>
-#app {
-  background-color: #646cff;
-}
 </style>

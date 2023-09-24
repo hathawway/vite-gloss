@@ -1,19 +1,23 @@
 <template>
   <div id="main">
+    <ListWord/>
   </div>
 </template>
 
 <script>
+import ListWord from "./ListWord.vue";
+
 export default {
   name: "main",
   components: {
+    ListWord: ListWord,
   }
 }
 </script>
 
 <style>
 #main {
-  width: 200px;
-  height: 200px;
+  background-color: #fff;
+  padding: 30px;
 }
 </style>
