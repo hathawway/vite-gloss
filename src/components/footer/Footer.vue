@@ -1,7 +1,7 @@
 <template>
-  <div id="footer">
+  <div class="footer-info">
     <hr class="hr-shadow">
-    <h5>&copy; 2023 hathawway</h5>
+    <p class="copyright">&copy; 2023 hathawway</p>
   </div>
 </template>
 
@@ -13,29 +13,30 @@ export default {
 </script>
 
 <style>
-#footer {
-  background-color: rgba(216, 241, 211, 0.99);
-  padding: 10px 30px;
-  font-size: 18px;
-
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-}
-
-.hr-shadow {
-  margin: 10px 0;
-  padding: 0;
-  height: 10px;
-  border: none;
-  border-top: 1px solid #333;
-  box-shadow: 0 10px 10px -10px #8c8b8b inset;
-}
-
-h5 {
+.footer-info {
+  flex: 0 0 auto;
+  background-color: #ffffff;
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
+}
+
+.copyright {
+  font-size: 20px;
+  padding: 15px;
+  font-weight: 900;
+}
+
+.hr-shadow {
+  width: 100%;
+  margin-bottom: 5px;
+  padding: 0;
+  height: 15px;
+  border: none;
+  background-color: rgba(234, 230, 215, 0.99);
+  background-image: linear-gradient(90deg, rgba(234, 230, 215, 0.99), orange 33.33%, transparent 33.33%, transparent 100%);
+  background-size: 3px 100%;
 }
 
 </style>

@@ -1,5 +1,5 @@
 <template>
-  <ul id="list-word">
+  <ul class="list-word">
     <li class="word">
       <h4>name1</h4>
       <p>fgbndfgbdfgb</p>
@@ -28,15 +28,13 @@ export default {
 </script>
 
 <style>
-#list-word {
-
+.list-word {
+  padding: 15px 50px;
 }
 
 .word {
   list-style: none;
-  //border: 3px solid darkslategray;
-  outline: none;
-  padding: 10px 20px;
-  margin: 10px;
+  margin: 20px 10px;
+  font-size: 18px;
 }
 </style>

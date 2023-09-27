@@ -1,8 +1,7 @@
 <template>
-  <div id="header">
+  <div class="header-search">
     <Search/>
-    <button class="btn-list">Показать список всех доступных слов</button>
-  </div>
+    </div>
 </template>
 
 <script>
@@ -17,22 +16,9 @@ export default {
 </script>
 
 <style>
-#header {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background-color: rgba(216, 241, 211, 0.99);
-  padding: 10px;
+.header-search {
+  padding: 50px 100px;
+  flex: 0 0 auto;
 }
 
-.btn-list {
-  background-color:  rgba(216, 241, 211, 0.99);
-  border: none;
-  border-bottom: 3px solid darkslategray;
-  outline: none;
-  font-size: 14px;
-  color: darkslategray;
-  font-weight: bold;
-  letter-spacing: 1px;
-}
 </style>

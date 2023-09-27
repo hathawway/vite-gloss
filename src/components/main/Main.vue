@@ -1,5 +1,5 @@
 <template>
-  <div id="main">
+  <div class="main-words">
     <ListWord/>
   </div>
 </template>
@@ -16,8 +16,11 @@ export default {
 </script>
 
 <style>
-#main {
-  background-color: #fff;
-  padding: 30px;
+.main-words {
+  flex: 1 0 auto;
+
+  background-color: rgba(255, 255, 255, 0.98);
+  border-top-right-radius: 30px;
+  border-top-left-radius: 30px;
 }
 </style>

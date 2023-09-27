@@ -1,7 +1,11 @@
 <template>
-  <form id="search" action="" method="get">
-      <input type="search" class="input" placeholder="Search">
-    <button type="submit" class="search-btn">Поиск</button>
+  <form class="search" action="" method="get">
+    <input type="search" class="input-search" placeholder="Search">
+    <button type="submit" class="btn-search">Поиск</button>
+    <div class="btn-list">
+      <button class="btn" data-hint="Вывести весь глоссарий">!</button>
+    </div>
+
   </form>
 
 </template>
@@ -10,74 +14,90 @@
 export default {
   name: "search",
   components: {},
-  methods: {
-  },
+  methods: {},
 }
 </script>
 
 <style>
-#search {
+.search {
   display: flex;
-  flex-direction: row;
-  padding: 20px 50px;
+  justify-content: center;
 }
 
-.search-btn {
-  margin: 0px 5px;
-  border: 3px solid darkslategray;
-  padding: 15px 30px;
-  border-radius: 50px;
-  outline: none;
+.input-search {
+  width: 550px;
+  padding: 10px 10px;
+  border: 3px rgba(190, 177, 146, 0.99) solid;
+  font-size: 18px;
+  color: #020000;
+  background-color: #fff;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+
+.input-search::placeholder {
   font-size: 18px;
   color: darkslategray;
-  font-weight: bold;
-  letter-spacing: 1px;
-  background-color:  rgba(216, 241, 211, 0.99);
 }
 
-.input {
-  width: 400px;
-  border: 3px solid darkslategray;
-  background: transparent;
-  padding: 15px 30px;
-  border-radius: 50px;
-  outline: none;
+.btn-search {
+  padding: 10px 15px;
   font-size: 18px;
-  color: darkslategray;
-  font-weight: bold;
-  letter-spacing: 1px;
+  color: #ffffff;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  border: 1px rgba(190, 177, 146, 0.99) solid;
+  background-color: rgba(190, 177, 146, 0.99);
+  font-weight: 900;
 }
 
-::-webkit-input-placeholder { /* Chrome/Opera/Safari */
-  color: darkslategray;
-  font-family: Roboto;
-  letter-spacing: 2px;
-  text-transform: uppercase;
+.btn-list {
+  display: flex;
+  align-items: center;
 }
 
-::-moz-placeholder { /* Firefox 19+ */
-  color: darkslategray;
+.btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-left: 10px;
+  font-size: 28px;
+  font-weight: 900;
+  color: #ffffff;
+  background-color: cornflowerblue;
+  border: cornflowerblue;
 }
 
-:-ms-input-placeholder { /* IE 10+ */
-  color: darkslategray;
+.btn:hover {
+  background-color: darkslategray;
+  border: darkslategray;
 }
 
-@keyframes animate {
-  0% {
-    transform: scale(1);
-  }
-  25% {
-    transform: scale(1.2);
-  }
-  50% {
-    transform: scale(1.5);
-  }
-  75% {
-    transform: scale(1.2);
-  }
-  100% {
-    transform: scale(1);
-  }
+[data-hint] {
+  position: relative;
 }
+
+[data-hint]::after {
+  opacity: 0;
+  width: max-content;
+  color: #FFFFFF;
+  background-color: rgba(0,0,0,.7);
+  border-radius: 6px;
+  padding: 10px;
+  content: attr(data-hint);
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1em;
+  position: absolute;
+  bottom: -70px;
+  left: 50%;
+  transform: translate(-50%, -100%);
+  pointer-events: none;
+  transition: opacity 0.2s;
+}
+
+[data-hint]:hover::after {
+  opacity: 1;
+}
+
 </style>
