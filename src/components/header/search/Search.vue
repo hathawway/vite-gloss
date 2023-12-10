@@ -1,23 +1,29 @@
 <template>
-  <div class="search">
+  <div class="search search-btn">
+    <button class="btn-btn">Глоссарий</button>
+    <button class="btn-btn">Граф</button>
+  </div>
+  <div class="search search-str">
     <input
         type="search"
         class="input-search"
-        placeholder="Search"
+        placeholder="Поиск"
         v-model="searchText"
     >
     <button
-        class="btn-search btn-search-first-child"
+        class="btn-search"
         v-on:click="search">Поиск
     </button>
-    <button class="btn-search" data-hint="Вывести весь глоссарий" v-on:click="store.commit('toggleGraph')">Граф</button>
+  </div>
+  <div class="search search-name">
+    <button class="btn-btn">Alex Bukov</button>
   </div>
 
 </template>
 
 <script>
-import { GetPostsViaAPI, SearchPostsViaAPI } from "../../../api/glossary_api.js";
-import { store } from "../../../store/main_page.js";
+import {GetPostsViaAPI, SearchPostsViaAPI} from "../../../api/glossary_api.js";
+import {store} from "../../../store/main_page.js";
 
 export default {
   name: "search",
@@ -44,65 +50,65 @@ export default {
 </script>
 
 <style>
+.search-btn {
+
+}
+
+.btn-btn {
+  background-color: white;
+  color: rgba(2, 0, 0, 0.99);
+  padding: 10px 20px;
+  border-radius: 5px;
+  border: none;
+  margin: 5px;
+  font-size: 16px;
+}
+
+.btn-btn:hover {
+  background-color: #918f8f;
+}
+
+.btn-search {
+  background-color: #918f8f;
+  color: rgba(2, 0, 0, 0.99);
+  padding: 10px 20px;
+  border-radius: 5px;
+  border: none;
+  margin: 5px;
+  font-size: 16px;
+}
+
+.btn-search:hover {
+  background-color: white;
+}
+
 .search {
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
+}
+
+.search-str {
+
+}
+
+.search-name {
+
 }
 
 .input-search {
   width: 550px;
   padding: 10px 10px;
-  border: 3px rgba(190, 177, 146, 0.99) solid;
-  font-size: 18px;
+  border-radius: 5px;
+  border: none;
+  font-size: 16px;
   color: #020000;
   background-color: #fff;
-  border-top-left-radius: 10px;
-  border-bottom-left-radius: 10px;
+
 }
 
 .input-search::placeholder {
   font-size: 18px;
   color: darkslategray;
-}
-
-.btn-search {
-  padding: 10px 15px;
-  font-size: 18px;
-  color: #ffffff;
-  border-top-right-radius: 10px;
-  border-bottom-right-radius: 10px;
-  border: 1px rgb(46, 108, 169) solid;
-  background-color: rgb(46, 108, 169);
-  font-weight: 900;
-}
-
-.btn-search-first-child {
-  border-top-right-radius: 0px;
-  border-bottom-right-radius: 0px;
-  background-color: rgba(190, 177, 146, 0.99);
-  border: 1px rgba(190, 177, 146, 0.99) solid;
-}
-
-.btn-list {
-  display: flex;
-  align-items: center;
-}
-
-.btn {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  margin-left: 10px;
-  font-size: 28px;
-  font-weight: 900;
-  color: #ffffff;
-  background-color: cornflowerblue;
-  border: cornflowerblue;
-}
-
-.btn:hover {
-  background-color: darkslategray;
-  border: darkslategray;
 }
 
 [data-hint] {

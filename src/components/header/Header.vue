@@ -17,8 +17,11 @@ export default {
 
 <style>
 .header-search {
-  padding: 50px 100px;
+  padding: 20px 0px;
   flex: 0 0 auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
 }
 
 </style>

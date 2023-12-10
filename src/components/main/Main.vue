@@ -28,9 +28,6 @@ export default {
 <style>
 .main-words {
   flex: 1 0 auto;
-
-  background-color: rgba(255, 255, 255, 0.98);
-  border-top-right-radius: 30px;
-  border-top-left-radius: 30px;
+  background-color: #343434;
 }
 </style>
