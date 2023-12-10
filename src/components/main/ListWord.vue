@@ -23,7 +23,7 @@ export default {
 </script>
 
 <style>
-.list-word {
+#list-word {
   padding: 15px 50px;
 }
 

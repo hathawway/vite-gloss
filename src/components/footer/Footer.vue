@@ -23,7 +23,7 @@ export default {
 }
 
 .copyright {
-  font-size: 20px;
+  font-size: 18px;
   padding: 15px;
   font-weight: 900;
 }

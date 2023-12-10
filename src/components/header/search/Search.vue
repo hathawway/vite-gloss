@@ -92,28 +92,6 @@ export default {
   border: 1px rgba(190, 177, 146, 0.99) solid;
 }
 
-.btn-list {
-  display: flex;
-  align-items: center;
-}
-
-.btn {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  margin-left: 10px;
-  font-size: 28px;
-  font-weight: 900;
-  color: #ffffff;
-  background-color: cornflowerblue;
-  border: cornflowerblue;
-}
-
-.btn:hover {
-  background-color: darkslategray;
-  border: darkslategray;
-}
-
 [data-hint] {
   position: relative;
 }
