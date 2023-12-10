@@ -27,6 +27,11 @@ export default {
         view: {
           layoutHandler: new vNG.GridLayout({grid: 15}),
         },
+        node: {
+          label:{
+            fontSize: 18,
+          }
+        }
       })
     }
   },
@@ -43,5 +48,8 @@ export default {
   width: 100%;
   height: 100%;
   border: 1px solid #000;
+}
+v-ng-text {
+  font-size: 64px;
 }
 </style>

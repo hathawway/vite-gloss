@@ -3,11 +3,6 @@
     <li v-for="c in store.getters.getPosts" class="word">
       <h4>{{ c.name }}</h4>
       <p>{{ c.content }}</p>
-      <div v-if="c.link">
-      </div>
-      <div v-else>
-        <cite>Источник</cite>
-      </div>
     </li>
   </ul>
 </template>

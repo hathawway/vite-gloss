@@ -5,24 +5,28 @@
         class="input-search"
         placeholder="Search"
         v-model="searchText"
+        v-if="!store.getters.getGraphEnabled"
     >
     <button
         class="btn-search btn-search-first-child"
         v-on:click="search">Поиск
     </button>
-    <button class="btn-search" data-hint="Вывести весь глоссарий" v-on:click="store.commit('toggleGraph')">Граф</button>
+    <button
+        class="btn-search"
+        v-on:click="toggleGraph">{{toggleButtonName}}</button>
   </div>
 
 </template>
 
 <script>
-import { GetPostsViaAPI, SearchPostsViaAPI } from "../../../api/glossary_api.js";
+import { SearchPostsViaAPI } from "../../../api/glossary_api.js";
 import { store } from "../../../store/main_page.js";
 
 export default {
   name: "search",
   data() {
     return {
+      toggleButtonName: "Граф",
       searchText: "",
     }
   },
@@ -31,8 +35,13 @@ export default {
     search() {
       SearchPostsViaAPI(this.searchText)
     },
-    clear() {
-      GetPostsViaAPI()
+    toggleGraph() {
+      store.commit('toggleGraph')
+      if (store.getters.getGraphEnabled) {
+        this.toggleButtonName = "Глоссарий"
+      } else {
+        this.toggleButtonName = "Граф"
+      }
     }
   },
   computed: {

@@ -1,7 +1,7 @@
 <template>
   <div class="footer-info">
     <hr class="hr-shadow">
-    <p class="copyright">&copy; 2023 hathawway</p>
+    <p class="copyright">&copy; 2023 Okladnikova Olga</p>
   </div>
 </template>
 
