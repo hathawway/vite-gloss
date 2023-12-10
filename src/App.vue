@@ -5,16 +5,20 @@
 </template>
 
 <script>
-import Header from "./components/header/Header.vue";
-import Main from "./components/main/Main.vue";
-import Footer from "./components/footer/Footer.vue";
+import HeaderComponent from "./components/header/Header.vue";
+import MainComponent from "./components/main/Main.vue";
+import FooterComponent from "./components/footer/Footer.vue";
+import { GetPostsViaAPI } from "./api/glossary_api.js";
 
 export default {
   name: "app",
+  mounted() {
+    GetPostsViaAPI()
+  },
   components: {
-    Footer: Footer,
-    Main: Main,
-    Header: Header,
+    Footer: FooterComponent,
+    Main: MainComponent,
+    Header: HeaderComponent,
   }
 }
 </script>

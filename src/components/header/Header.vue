@@ -8,7 +8,7 @@
 import Search from "./search/Search.vue";
 
 export default {
-  name: "header",
+  name: "HeaderComponent",
   components: {
     Search: Search,
   }

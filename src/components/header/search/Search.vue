@@ -1,20 +1,45 @@
 <template>
-  <form class="search" action="" method="get">
-    <input type="search" class="input-search" placeholder="Search">
-    <button type="submit" class="btn-search">Поиск</button>
-    <div class="btn-list">
-      <button class="btn" data-hint="Вывести весь глоссарий">!</button>
-    </div>
-
-  </form>
+  <div class="search">
+    <input
+        type="search"
+        class="input-search"
+        placeholder="Search"
+        v-model="searchText"
+    >
+    <button
+        class="btn-search btn-search-first-child"
+        v-on:click="search">Поиск
+    </button>
+    <button class="btn-search" data-hint="Вывести весь глоссарий" v-on:click="store.commit('toggleGraph')">Граф</button>
+  </div>
 
 </template>
 
 <script>
+import { GetPostsViaAPI, SearchPostsViaAPI } from "../../../api/glossary_api.js";
+import { store } from "../../../store/main_page.js";
+
 export default {
   name: "search",
+  data() {
+    return {
+      searchText: "",
+    }
+  },
   components: {},
-  methods: {},
+  methods: {
+    search() {
+      SearchPostsViaAPI(this.searchText)
+    },
+    clear() {
+      GetPostsViaAPI()
+    }
+  },
+  computed: {
+    store() {
+      return store
+    },
+  },
 }
 </script>
 
@@ -46,9 +71,16 @@ export default {
   color: #ffffff;
   border-top-right-radius: 10px;
   border-bottom-right-radius: 10px;
-  border: 1px rgba(190, 177, 146, 0.99) solid;
-  background-color: rgba(190, 177, 146, 0.99);
+  border: 1px rgb(46, 108, 169) solid;
+  background-color: rgb(46, 108, 169);
   font-weight: 900;
+}
+
+.btn-search-first-child {
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px;
+  background-color: rgba(190, 177, 146, 0.99);
+  border: 1px rgba(190, 177, 146, 0.99) solid;
 }
 
 .btn-list {
@@ -81,7 +113,7 @@ export default {
   opacity: 0;
   width: max-content;
   color: #FFFFFF;
-  background-color: rgba(0,0,0,.7);
+  background-color: rgba(0, 0, 0, .7);
   border-radius: 6px;
   padding: 10px;
   content: attr(data-hint);

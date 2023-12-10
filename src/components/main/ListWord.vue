@@ -1,28 +1,28 @@
 <template>
-  <ul class="list-word">
-    <li class="word">
-      <h4>name1</h4>
-      <p>fgbndfgbdfgb</p>
-      <cite>article</cite>
+  <ul id="list-word">
+    <li v-for="c in store.getters.getPosts" class="word">
+      <h4>{{ c.name }}</h4>
+      <p>{{ c.content }}</p>
+      <div v-if="c.link">
+      </div>
+      <div v-else>
+        <cite>Источник</cite>
+      </div>
     </li>
-    <li class="word">
-      <h4>name2</h4>
-      <p>fgbndfgbdfgb</p>
-      <cite>article</cite>
-    </li>
-    <li class="word">
-      <h4>name3</h4>
-      <p>fgbndfgbdfgb</p>
-      <cite>article</cite>
-    </li>
-
-
   </ul>
 </template>
 
 <script>
+
+import { store } from "../../store/main_page.js";
+
 export default {
   name: "list-word",
+  computed: {
+    store() {
+      return store
+    },
+  },
   components: {}
 }
 </script>

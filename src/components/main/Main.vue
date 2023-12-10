@@ -1,17 +1,27 @@
 <template>
   <div class="main-words">
-    <ListWord/>
+    <ListWord v-if="!store.getters.getGraphEnabled"/>
+    <GraphView v-else/>
   </div>
 </template>
 
 <script>
 import ListWord from "./ListWord.vue";
+import GraphView from "./GraphView.vue";
+import { store } from "../../store/main_page.js";
 
 export default {
-  name: "main",
+  name: "MainComponent",
+  data() {},
   components: {
+    GraphView: GraphView,
     ListWord: ListWord,
-  }
+  },
+  computed: {
+    store() {
+      return store
+    },
+  },
 }
 </script>
 
