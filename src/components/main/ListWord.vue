@@ -9,7 +9,6 @@
       <h4>name2</h4>
       <p>fgbndfgbdfgb</p>
       <cite>article</cite>
-    </li>
     <li class="word">
       <h4>name3</h4>
       <p>fgbndfgbdfgb</p>
