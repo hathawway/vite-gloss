@@ -5,7 +5,6 @@
         class="input-search"
         placeholder="Search"
         v-model="searchText"
-        v-if="!store.getters.getGraphEnabled"
     >
     <button
         class="btn-search btn-search-first-child"

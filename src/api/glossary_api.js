@@ -2,7 +2,8 @@ import data from './data.json'
 import graph from './graph.json'
 import { store } from "../store/main_page.js";
 
-const url = 'http://localhost:8080/api'
+// const url = 'http://localhost:8080/api'
+const url = 'http://95.216.20.142:18500/api'
 const apiPosts = "/posts"
 const apiSearch = "/search"
 const apiGraph = "/graph"
